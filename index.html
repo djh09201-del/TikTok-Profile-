@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>My TikTok Profile</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #000;
+      color: #fff;
+      min-height: 100vh;
+    }
+
+    .profile {
+      max-width: 500px;
+      margin: auto;
+      min-height: 100vh;
+      background: #000;
+    }
+
+    /* TOP BAR */
+    .top {
+      height: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 18px;
+      border-bottom: 1px solid #222;
+    }
+
+    .top h2 {
+      font-size: 18px;
+    }
+
+    .menu {
+      font-size: 25px;
+    }
+
+    /* PROFILE */
+    .profile-info {
+      text-align: center;
+      padding: 25px 15px 15px;
+    }
+
+    .profile-photo {
+      width: 95px;
+      height: 95px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #fff;
+      margin-bottom: 12px;
+    }
+
+    .username {
+      font-size: 21px;
+      font-weight: bold;
+    }
+
+    .verified {
+      color: #20d5ec;
+      font-size: 17px;
+    }
+
+    .bio {
+      margin-top: 8px;
+      color: #ccc;
+      font-size: 14px;
+    }
+
+    /* STATS */
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 35px;
+      margin: 22px 0;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .number {
+      font-size: 19px;
+      font-weight: bold;
+    }
+
+    .label {
+      font-size: 12px;
+      color: #aaa;
+      margin-top: 4px;
+    }
+
+    /* BUTTON */
+    .follow-btn {
+      background: #fe2c55;
+      border: none;
+      color: white;
+      padding: 10px 55px;
+      border-radius: 4px;
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    /* TABS */
+    .tabs {
+      height: 50px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      border-top: 1px solid #222;
+      border-bottom: 1px solid #222;
+    }
+
+    .tab {
+      font-size: 22px;
+      color: #aaa;
+    }
+
+    .active {
+      color: white;
+      border-bottom: 2px solid white;
+      height: 50px;
+      display: flex;
+      align-items: center;
+    }
+
+    /* VIDEO */
+    .video-box {
+      position: relative;
+      width: 100%;
+      background: #111;
+      margin-bottom: 30px;
+    }
+
+    video {
+      width: 100%;
+      height: 600px;
+      object-fit: cover;
+      display: block;
+      background: #111;
+    }
+
+    /* VIDEO INFO */
+    .video-caption {
+      padding: 12px 15px;
+      font-size: 14px;
+    }
+
+    .video-caption p {
+      margin-bottom: 8px;
+    }
+
+    .hashtags {
+      color: #20d5ec;
+    }
+
+    /* VIDEO SIDE BUTTONS */
+    .video-actions {
+      position: absolute;
+      right: 12px;
+      bottom: 75px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .action {
+      text-align: center;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .action-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(0,0,0,0.55);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 25px;
+      margin-bottom: 3px;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      color: #666;
+      padding: 25px;
+      font-size: 12px;
+    }
+
+    @media (max-width: 500px) {
+      video {
+        height: 560px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="profile">
+
+    <!-- TOP -->
+    <div class="top">
+      <span>‹</span>
+      <h2>H.C.B</h2>
+      <span class="menu">☰</span>
+    </div>
+
+    <!-- PROFILE -->
+    <div class="profile-info">
+
+      <!-- Yoo profile photo qabda, maqaa isaa profile.jpg godhi -->
+      <img
+        src="profile.jpg"
+        class="profile-photo"
+        alt="Profile Photo"
+        onerror="this.style.display='none'"
+      >
+
+      <div class="username">
+        H.C.B <span class="verified">✓</span>
+      </div>
+
+      <div class="bio">
+        Welcome to my profile ❤️
+      </div>
+
+      <!-- STATS -->
+      <div class="stats">
+
+        <div class="stat">
+          <div class="number">6M</div>
+          <div class="label">Followers</div>
+        </div>
+
+        <div class="stat">
+          <div class="number">1</div>
+          <div class="label">Following</div>
+        </div>
+
+        <div class="stat">
+          <div class="number">5M</div>
+          <div class="label">Likes</div>
+        </div>
+
+      </div>
+
+      <button class="follow-btn" onclick="followMe()">
+        Follow
+      </button>
+
+    </div>
+
+    <!-- TABS -->
+    <div class="tabs">
+      <div class="tab active">▦</div>
+      <div class="tab">♡</div>
+    </div>
+
+    <!-- VIDEO -->
+    <div class="video-box">
+
+      <video
+        controls
+        autoplay
+        muted
+        loop
+        playsinline
+      >
+        <source src="video.mp4" type="video/mp4">
+        Your browser does not support video.
+      </video>
+
+      <!-- SIDE ACTIONS -->
+      <div class="video-actions">
+
+        <div class="action">
+          <div class="action-icon">❤️</div>
+          5M
+        </div>
+
+        <div class="action">
+          <div class="action-icon">💬</div>
+          125K
+        </div>
+
+        <div class="action">
+          <div class="action-icon">↗</div>
+          Share
+        </div>
+
+      </div>
+
+      <!-- CAPTION -->
+      <div class="video-caption">
+
+        <p>
+          My latest video ❤️🔥
+        </p>
+
+        <p class="hashtags">
+          #fyp #viral #tiktok #HCB
+        </p>
+
+      </div>
+
+    </div>
+
+    <footer>
+      My TikTok Style Profile
+    </footer>
+
+  </div>
+
+  <script>
+    function followMe() {
+      const button = document.querySelector(".follow-btn");
+
+      if (button.innerText === "Follow") {
+        button.innerText = "Following";
+        button.style.background = "#333";
+      } else {
+        button.innerText = "Follow";
+        button.style.background = "#fe2c55";
+      }
+    }
+  </script>
+
+</body>
+</html>
